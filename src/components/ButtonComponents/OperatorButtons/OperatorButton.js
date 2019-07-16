@@ -3,6 +3,7 @@ import React from "react";
 const OperatorButton = ({operator, value}) => {
   const operatorStyle = {
     background: '#007497',
+    color: 'white',
   }
   return (
     <>

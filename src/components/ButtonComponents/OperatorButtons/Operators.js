@@ -11,7 +11,10 @@ const Operators = () => {
   const operatorStyle = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around',
+    marginBottom: '13px',
+    height: '100%', 
+    order: '3'
   }
   return (
     <div style={operatorStyle}>

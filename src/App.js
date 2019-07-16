@@ -24,24 +24,48 @@ function App() {
   }
   const calculatorStyle = {
     display: 'flex',
-    justifyContent: 'flex-start',
     flexWrap: 'wrap',
     background: '#A9203C',
+    height: '700px',
+    width: '395px',
+    borderRadius: '8px',
+  }
+  const calcBorderStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'black',
     height: '709px',
     width: '402px',
-    borderRadius: '3px',
+  }
+
+  const buttonWrapperStyle = {
+    height: '500px',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap'
+
+  }
+
+  const logoStyle = {
+    marginTop: '10px',
+    marginLeft: '10px',
   }
 
   return (
     <div className="container" style={mainContainerStyle}>
-      
+      <div style={calcBorderStyle}>
       <div className="App" style={calculatorStyle}>
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
-        <Logo />
+        <Logo style={logoStyle}/>
         <Display />
+        <div style={buttonWrapperStyle}>
         <Specials />
         <Numbers />
         <Operators />
+        </div>
+      </div>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import React from "react";
 const SpecialButton = ({special}) => {
   const specialStyle = {
     background: '#125C99',
+    color: 'white',
+    marginTop: '8px'
   }
   return (
     <>

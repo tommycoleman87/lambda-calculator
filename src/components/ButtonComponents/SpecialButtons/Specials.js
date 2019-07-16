@@ -12,7 +12,9 @@ const Specials = () => {
   const specialStyle = {
     display: 'flex',
     justifyContent: 'space-around',
-    width: '300px'
+    width: '300px',
+    height: '100px', 
+    order: '1',
   }
 
   return (

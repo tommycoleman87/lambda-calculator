@@ -3,6 +3,7 @@ import React from "react";
 
 const Display = () => {
   const displayStyle = {
+    margin: 'auto',
     display: 'block',
     background: 'darkgrey',
     width: '375px',

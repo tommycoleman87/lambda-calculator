@@ -14,6 +14,8 @@ const Numbers = () => {
     flexWrap: 'wrap',
     width: '300px',
     justifyContent: 'space-around',
+    height: '400px',
+    order: '3',
   }
   console.log(numbers)
   return (
