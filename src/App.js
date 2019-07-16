@@ -16,20 +16,32 @@ function App() {
   // Your functions should accept a parameter of the the item data being displayed to the DOM (ie - should recieve 5 if the user clicks on
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
-  const style = {
-    background: 'grey',
+
+  const mainContainerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+  const calculatorStyle = {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+    background: '#A9203C',
+    height: '709px',
+    width: '402px',
+    borderRadius: '3px',
   }
 
   return (
-    <div className="container"  style={style}>
+    <div className="container" style={mainContainerStyle}>
       
-      <div className="App">
+      <div className="App" style={calculatorStyle}>
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Logo />
         <Display />
+        <Specials />
         <Numbers />
         <Operators />
-        <Specials />
       </div>
     </div>
   );
