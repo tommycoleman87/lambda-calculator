@@ -1,16 +1,21 @@
 import React from "react";
 
 
-const Display = () => {
+const Display = ({total}) => {
   const displayStyle = {
     margin: 'auto',
-    display: 'block',
-    background: 'darkgrey',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    background: 'black',
+    color: 'white',
     width: '375px',
     height: '90px',
-    borderRadius: '50px'
+    borderRadius: '50px',
+    fontSize: '50px',
+    padding: '5px'
   }
-  return <div style={displayStyle}>{/* Display any props data here */}
+  return <div style={displayStyle}>{total}
   </div>;
 };
 

@@ -1,8 +1,7 @@
 import React from "react";
 
-const NumberButton = ({number}) => {
+const NumberButton = ({number, total}) => {
   let numberStyle;
-  console.log(number)
   if(number == 0) {
     numberStyle = {
       background : '#0E447E',
@@ -21,7 +20,7 @@ const NumberButton = ({number}) => {
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button style={numberStyle}>{number}</button>
+      <button style={numberStyle} onClick={total}>{number}</button>
     </>
   );
 };
