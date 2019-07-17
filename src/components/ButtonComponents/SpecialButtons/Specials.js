@@ -6,7 +6,7 @@ import { specials } from '../../../data';
 
 //Import your array data to from the provided data file
 
-const Specials = () => {
+const Specials = ({total}) => {
   // STEP 2 - add the imported data to state
   const [specialState, setSpecials] = useState(specials);
   const specialStyle = {
@@ -23,7 +23,7 @@ const Specials = () => {
        component matching the name on the provided file. Pass
        it any props needed by the child component*/}
        {specialState.map(special => {
-         return <SpecialButton special={special} />
+         return <SpecialButton special={special} total={total} />
        })}
     </div>
   );

@@ -35,6 +35,8 @@ function App() {
     console.log(total)
     if(button === "="){
         calculate()
+    } else if(button === 'C'){
+      setTotal('')
     }
 
     else {
@@ -87,7 +89,7 @@ function App() {
           <Logo style={logoStyle} />
           <Display total={total} />
           <div style={buttonWrapperStyle}>
-            <Specials />
+            <Specials total={(event) => click(event)}/>
             <Numbers total={(event) => click(event)} />
             <Operators
               total={event => click(event)}
