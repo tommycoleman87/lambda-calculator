@@ -17,30 +17,40 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
   const [total, setTotal] = useState('');
- 
-
-  const calculate = (event) => {
+  const [accumulator, setAcc] = useState('')
+  const calculate = () => {
       try {
-        setTotal(eval(total));
+        setAcc(eval(total));
+        setTotal(eval(total))
       }
       catch(e) {
         console.log(e)
-        setTotal('error')
+        setTotal('error');
+        setAcc('error');
       }
   }
 
   const click = event => {
     const button = event.target.textContent
-    console.log(button)
-    console.log(total)
     if(button === "="){
         calculate()
     } else if(button === 'C'){
-      setTotal('')
+      setTotal('');
+      setAcc('');
+    } else if(button === '+/-'){
+      setAcc(eval(accumulator * -1))
+      setTotal(eval(total * -1));
+    } else if(button === 'x'){
+      setTotal(`${total}*`)
+      setAcc(`${accumulator}x`)
+    } else if(button === '%') {
+      setTotal(eval(total / 100));
+      setAcc(eval(accumulator / 100));
     }
 
     else {
-      setTotal(`${total}${button}`)
+      setAcc(`${accumulator}${button}`)
+      setTotal(`${total}${button}`);
     }
 }
 
@@ -87,7 +97,7 @@ function App() {
         <div className="App" style={calculatorStyle}>
           {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
           <Logo style={logoStyle} />
-          <Display total={total} />
+          <Display total={accumulator} />
           <div style={buttonWrapperStyle}>
             <Specials total={(event) => click(event)}/>
             <Numbers total={(event) => click(event)} />
